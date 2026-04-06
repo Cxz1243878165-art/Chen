@@ -211,8 +211,6 @@ def page_home():
         <p style="color:#666; max-width:780px; margin: 0.75rem auto 0; font-size:1.05rem;">
             This application accompanies the BSc thesis comparing the Black–Scholes and
             Heston stochastic volatility models using real NVDA option market data from January 2026.
-            Explore the theory, simulate price paths, benchmark performance, and compare
-            model-implied volatility smiles against market observations.
         </p>
     </div>
     """, unsafe_allow_html=True)
