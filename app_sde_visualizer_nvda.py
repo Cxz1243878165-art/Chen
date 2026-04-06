@@ -204,48 +204,96 @@ def simulate_heston_paths(S0, T, r, v0, kappa, theta, sigma_v, rho, M, N, return
 
 def page_home():
     _inject_css()
+
     st.markdown("""
-    <div class="hero">
-        <h1>📈 NVDA Volatility & SDE Explorer</h1>
-        <h3>Black–Scholes vs Heston — Interactive Analysis with NVIDIA Option Data</h3>
-        <p style="color:#666; max-width:780px; margin: 0.75rem auto 0; font-size:1.05rem;">
-            This application accompanies the BSc thesis comparing the Black–Scholes and
-            Heston stochastic volatility models using real NVDA option market data from January 2026.
+    <div class="app-banner">
+        <h1>NVDA Volatility and Option Pricing Explorer</h1>
+        <p>
+            This interactive application was developed alongside the dissertation to
+            support real-time exploration of the Black--Scholes and Heston models
+            using NVIDIA option data. The tool combines theoretical notes, simulation,
+            model comparison, and volatility-surface visualisation in one interface.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("#### Choose a section")
-    c1, c2 = st.columns(2)
-    with c1:
-        st.markdown('<div class="card"><h4>📚 Theory & Notes</h4>'
-                    '<p>Brownian motion, GBM, Black–Scholes PDE, Heston dynamics, calibration and more.</p>',
-                    unsafe_allow_html=True)
-        st.button("Open Theory ▶", key="h_th", on_click=_navigate_to, args=("📚 Theory & Notes",))
-        st.markdown("</div>", unsafe_allow_html=True)
-    with c2:
-        st.markdown('<div class="card"><h4>🧪 SDE Visualiser</h4>'
-                    '<p>Simulate GBM and Heston paths for NVDA, compare return distributions and variance dynamics.</p>',
-                    unsafe_allow_html=True)
-        st.button("Open Visualiser ▶", key="h_vis", on_click=_navigate_to, args=("🧪 SDE Visualiser",))
-        st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("### Explore the application")
 
-    c3, c4 = st.columns(2)
-    with c3:
-        st.markdown('<div class="card"><h4>⚡ Performance & Benchmark</h4>'
-                    '<p>Timing experiments for GBM vs Heston simulations; computational complexity comparison.</p>',
-                    unsafe_allow_html=True)
-        st.button("Open Performance ▶", key="h_perf", on_click=_navigate_to, args=("⚡ Performance & Benchmark",))
-        st.markdown("</div>", unsafe_allow_html=True)
-    with c4:
-        st.markdown('<div class="card"><h4>📊 Vol Smile Explorer</h4>'
-                    '<p>Load NVDA option data; compare market implied volatility against BS and calibrated Heston.</p>',
-                    unsafe_allow_html=True)
-        st.button("Open Vol Smile ▶", key="h_sm", on_click=_navigate_to, args=("📊 Vol Smile Explorer",))
-        st.markdown("</div>", unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("""
+        <div class="feature-tile">
+            <h4>📖 Theory and Notes</h4>
+            <p>
+                Concise explanations of Brownian motion, Itô calculus, geometric
+                Brownian motion, Black--Scholes pricing, Heston dynamics, and
+                calibration ideas used throughout the dissertation.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.button(
+            "Go to Theory",
+            key="go_theory",
+            on_click=_navigate_to,
+            args=("📖 Theory and Notes",)
+        )
+
+    with col2:
+        st.markdown("""
+        <div class="feature-tile">
+            <h4>📈 SDE Visualiser</h4>
+            <p>
+                Simulate and compare Black--Scholes and Heston paths, and inspect
+                how stochastic volatility changes return dispersion and distributional shape.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.button(
+            "Go to Visualiser",
+            key="go_visualiser",
+            on_click=_navigate_to,
+            args=("📈 SDE Visualiser",)
+        )
+
+    col3, col4 = st.columns(2)
+
+    with col3:
+        st.markdown("""
+        <div class="feature-tile">
+            <h4>⏱️ Performance and Benchmark</h4>
+            <p>
+                Compare runtime and computational cost across model settings, with
+                a focus on the trade-off between analytical simplicity and empirical realism.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.button(
+            "Go to Benchmark",
+            key="go_benchmark",
+            on_click=_navigate_to,
+            args=("⏱️ Performance and Benchmark",)
+        )
+
+    with col4:
+        st.markdown("""
+        <div class="feature-tile">
+            <h4>📉 Volatility Smile Explorer</h4>
+            <p>
+                Load NVDA option data and compare market implied volatility with
+                Black--Scholes and calibrated Heston outputs across strike prices.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.button(
+            "Go to Smile Explorer",
+            key="go_smile",
+            on_click=_navigate_to,
+            args=("📉 Vol Smile Explorer",)
+        )
 
     st.markdown("---")
-    st.caption("MSc Thesis: Stochastic Differential Equations and their Applications in Finance — NVDA Case Study")
+    st.caption(BSc Thesis Companion Tool: NVDA options, stochastic differential equations, and volatility modelling")
 
 
 # ══════════════════════════════════════════════════════════════════════
