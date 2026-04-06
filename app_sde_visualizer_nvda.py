@@ -366,43 +366,59 @@ def _set_theory_view(sid):
 # ─── Individual theory sections ───────────────────────────────────────
 
 def _section_brownian():
-    st.header("Standard Brownian Motion")
-    st.markdown('<div class="box definition">Definition (Standard Brownian Motion).</div>', unsafe_allow_html=True)
-    st.latex(r"W_0 = 0, \quad W_t - W_s \sim \mathcal{N}(0, t-s), \quad \text{independent increments, continuous paths}")
-    st.write("**Interactive illustration — Simulating Brownian motion sample paths:**")
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        T = st.slider("Horizon T", 0.25, 5.0, 1.0, 0.25, key="bm_T")
-        M = st.slider("Paths M", 1, 30, 5, 1, key="bm_M")
-    with c2:
-        N = st.slider("Steps N", 100, 4000, 800, 100, key="bm_N")
-        seed = st.number_input("Seed", min_value=0, value=0, step=1, key="bm_seed")
-    with c3:
-        show_hist = st.checkbox("Increments histogram", value=True, key="bm_hist")
+    st.header("Brownian Motion: Path Simulation")
+    st.markdown(
+        '<div class="definition box">Brownian motion starts at zero, has independent Gaussian increments, and continuous sample paths.</div>',
+        unsafe_allow_html=True
+    )
+    st.latex(r"W_0 = 0,\qquad W_t - W_s \sim \mathcal{N}(0, t-s)")
+    st.write(
+        "Use the controls below to explore how the time horizon, number of paths, "
+        "and discretisation level affect simulated Brownian trajectories."
+    )
+
+    left, right = st.columns(2)
+    with left:
+        T = st.slider("Time horizon T", 0.25, 5.0, 1.0, 0.25, key="bm_T")
+        n_paths = st.slider("Number of paths", 1, 30, 5, 1, key="bm_paths")
+    with right:
+        n_steps = st.slider("Number of time steps", 100, 4000, 800, 100, key="bm_steps")
+        seed = st.number_input("Random seed", min_value=0, value=0, step=1, key="bm_seed")
+
+    show_hist = st.checkbox("Show increment distribution", value=True, key="bm_hist")
 
     rng = np.random.default_rng(int(seed))
-    dt = T / N; t = np.linspace(0, T, N+1)
-    dW = rng.normal(0, np.sqrt(dt), (M, N))
-    W = np.concatenate([np.zeros((M,1)), np.cumsum(dW, axis=1)], axis=1)
+    dt = T / n_steps
+    t_grid = np.linspace(0, T, n_steps + 1)
+    increments = rng.normal(0, np.sqrt(dt), (n_paths, n_steps))
+    paths = np.concatenate([np.zeros((n_paths, 1)), np.cumsum(increments, axis=1)], axis=1)
 
     fig, ax = plt.subplots()
-    for i in range(M):
-        ax.plot(t, W[i], lw=1.5, alpha=0.9)
-    ax.set_title(f"Standard Brownian Motion — {M} path(s), T={T:g}, N={N}")
-    ax.set_xlabel("t"); ax.set_ylabel("W(t)"); ax.grid(True)
+    for i in range(n_paths):
+        ax.plot(t_grid, paths[i], lw=1.4, alpha=0.9)
+    ax.set_title(f"Simulated Brownian Motion Paths (T={T:g}, steps={n_steps}, paths={n_paths})")
+    ax.set_xlabel("t")
+    ax.set_ylabel("W(t)")
+    ax.grid(True)
     st.pyplot(fig)
 
     if show_hist:
-        fig_h, axh = plt.subplots()
-        inc = dW.ravel()
-        axh.hist(inc, bins=50, density=True, alpha=0.85)
-        xg = np.linspace(inc.min(), inc.max(), 400)
-        axh.plot(xg, norm.pdf(xg, 0, np.sqrt(dt)), ls="--", label="N(0, dt)")
-        axh.set_title("Distribution of increments ΔW ~ N(0, dt)")
-        axh.set_xlabel("ΔW"); axh.set_ylabel("Density"); axh.legend(); axh.grid(True)
+        fig_h, ax_h = plt.subplots()
+        flat_inc = increments.ravel()
+        ax_h.hist(flat_inc, bins=50, density=True, alpha=0.85)
+        xg = np.linspace(flat_inc.min(), flat_inc.max(), 400)
+        ax_h.plot(xg, norm.pdf(xg, 0, np.sqrt(dt)), ls="--", label="Normal density")
+        ax_h.set_title("Distribution of simulated increments")
+        ax_h.set_xlabel("Increment value")
+        ax_h.set_ylabel("Density")
+        ax_h.legend()
+        ax_h.grid(True)
         st.pyplot(fig_h)
-        st.caption(f"Empirical mean ≈ {inc.mean():.4f}, variance ≈ {inc.var():.5f} (theory: Var=dt={dt:.5f})")
 
+        st.caption(
+            f"Sample increment mean = {flat_inc.mean():.4f}; sample variance = {flat_inc.var():.5f}. "
+            f"The theoretical variance for Brownian increments is dt = {dt:.5f}."
+        )
 def _section_ito():
     st.header("Itô's Lemma")
     st.markdown('<div class="box remark">Itô process.</div>', unsafe_allow_html=True)
