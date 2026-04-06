@@ -12,22 +12,6 @@ The tool demonstrates the Black–Scholes (GBM) and Heston models through simula
 - **Performance & Benchmark**: Run timing tests for GBM vs Heston simulations; understand computational scaling.
 - **Volatility Smile Explorer**: Load NVDA option data; compare market implied volatility against Black–Scholes Model and Heston Model; inspect calibration diagnostics.
 
-
----
-
-## 🛠 Installation & Running Locally
-
-```bash
-git clone https://github.com/YOUR_USERNAME/sde-visualizer-nvda.git
-cd sde-visualizer-nvda
-
-# Generate NVDA options data
-python generate_nvda_data.py
-
-# Run the app
-streamlit run app_sde_visualizer_nvda.py
-```
-
 ## 📦 Dependencies
 
 - Python 3.9+
