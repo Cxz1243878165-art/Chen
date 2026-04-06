@@ -7,7 +7,7 @@ The tool demonstrates the Black–Scholes (GBM) and Heston models through simula
 
 ## 🚀 Features
 
--**Theory & Notes**: Interactive reference covering Brownian motion, Itô's Lemma, GBM, Black–Scholes, OU processes, Heston model, and calibration.
+- **Theory & Notes**: Interactive reference covering Brownian motion, Itô's Lemma, GBM, Black–Scholes, OU processes, Heston model, and calibration.
 -  **SDE Visualiser**: Simulate asset price paths under GBM and Heston; compare terminal return distributions; visualise variance dynamics.
 - **Performance & Benchmark**: Run timing tests for GBM vs Heston simulations; understand computational scaling.
 - **Volatility Smile Explorer**: Load NVDA option data; compare market implied volatility against Black–Scholes Model and Heston Model; inspect calibration diagnostics.
