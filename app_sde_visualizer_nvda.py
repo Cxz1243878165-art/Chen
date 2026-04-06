@@ -345,18 +345,18 @@ def page_home():
 # PAGE: THEORY & NOTES
 # ══════════════════════════════════════════════════════════════════════
 THEORY_SECTIONS = [
-    ("brownian",     "Standard Brownian Motion",    "Foundation of continuous-time randomness.",  "🟦"),
-    ("ito",          "Itô's Lemma",                 "Chain rule for stochastic processes.",       "🧮"),
-    ("gbm_def",      "Geometric Brownian Motion",   "Definition, solution & log-normality.",      "📈"),
+    ("bm_intro",     "Standard Brownian Motion",    "Foundation of continuous-time randomness.",  "🌊"),
+    ("ito",          "Itô's Lemma",                 "The stochastic chain rule and its role in model derivation.",       "🧮"),
+    ("gbm_def",      "Geometric Brownian Motion",   "Definition, closed-form solution, and lognormal price dynamics.",      "📈"),
     ("gbm_var",      "GBM: Different Variances",    "Same noise, different σ to compare paths.",  "📊"),
-    ("bs_theory",    "Black–Scholes (Theory)",       "GBM under Q, PDE and call formula.",        "🧠"),
-    ("bs_calc",      "BS Mini-Calculator",           "Quick prices for C/P with d₁, d₂.",        "⚙️"),
-    ("limitations",  "Limitations & Smile",          "Why BS is too rigid; NVDA smile evidence.", "🎯"),
-    ("meanrev",      "Mean-Reverting Process",       "OU intuition & link to Heston.",            "↩️"),
-    ("ou_explorer",  "OU Explorer",                  "Simulate mean reversion interactively.",    "🧪"),
-    ("heston",       "Heston Model",                 "Dynamics, CF pricing & intuition.",         "🌀"),
-    ("heston_calib", "Heston Calibration",           "Objective, LM update & tips.",              "🧷"),
-    ("glossary",     "Glossary",                     "Key terms at a glance.",                    "🔎"),
+    ("bs_theory",    "Black–Scholes (Theory)",      "Risk-neutral pricing, PDE intuition, and the European call formula.",        "📘"),
+    ("bs_tools",     "BS Mini-Calculator",          "Quick prices for C/P with d₁, d₂.",        "🛠️"),
+    ("limitations",  "Limitations & Smile",         "Why BS is too rigid; NVDA smile evidence.", "⚠️"),
+    ("mr_process",   "Mean-Reverting Process",      "OU intuition & link to Heston.",            "🔁"),
+    ("ou_demo",      "OU Explorer",                 "Interactive simulation of mean-reverting dynamics.",    "🧪"),
+    ("heston_intro", "Heston Model",                "Two-factor dynamics, characteristic-function pricing, and market intuition.", "🌀"),
+    ("heston_calib", "Heston Calibration",          "Parameter fitting, objective functions, and practical calibration issues.", "🔧"),
+    ("glossary",     "Glossary",                    "Summary definitions for notation and financial concepts used in the app."， "🔎"),
 ]
 
 
