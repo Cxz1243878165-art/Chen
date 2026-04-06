@@ -27,9 +27,9 @@ DEFAULT_DATA_FILE = "nvda_options_jan2026.csv.gz"
 # ─── Navigation ───────────────────────────────────────────────────────
 NAV_LABELS = [
     "🏠 Home",
-    "📖 Theory & Notes",
+    "📖 Theory and Notes",
     "📈 SDE Visualiser",
-    "⏱️ Performance & Benchmark",
+    "⏱️ Performance and Benchmark",
     "📉 Vol Smile Explorer",
 ]
 
