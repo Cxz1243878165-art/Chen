@@ -651,18 +651,19 @@ def page_theory():
 # ══════════════════════════════════════════════════════════════════════
 
 def page_sde_visualiser():
-    st.title("🧪 SDE Visualiser — Black–Scholes vs Heston (NVDA)")
+    st.title("📈 SDE Visualiser: Comparing GBM and Heston Dynamics")
+    st.caption("Interactive simulation of NVDA price dynamics under constant and stochastic volatility assumptions.")
 
     with st.sidebar:
-        st.header("🧮 Global Parameters")
-        S0 = st.number_input("Initial Price S₀ (NVDA)", value=183.12, key="S0")
-        K  = st.number_input("Strike K", value=185.0, key="K")
-        r  = st.slider("Risk-Free Rate r", 0.0, 0.1, 0.043, key="r_vis")
-        T  = st.slider("Time Horizon (Years)", 0.5, 5.0, 1.0, key="T_vis")
-        N  = st.slider("Time Steps", 100, 1000, 250, key="N_vis")
-        M  = st.slider("Simulations (Monte Carlo)", 10, 2000, 250, key="M_vis")
+        st.header("Model Inputs")
+        S0 = st.number_input("Initial stock price S₀", value=183.12, key="S0")
+        K = st.number_input("Reference strike K", value=185.0, key="K")
+        r = st.slider("Risk-free rate r", 0.0, 0.1, 0.043, key="r_vis")
+        T = st.slider("Simulation horizon T (years)", 0.5, 5.0, 1.0, key="T_vis")
+        N = st.slider("Number of time steps", 100, 1000, 250, key="N_vis")
+        M = st.slider("Number of simulated paths", 10, 2000, 250, key="M_vis")
 
-        with st.expander("Black–Scholes Parameters"):
+        with st.expander("Black--Scholes Assumptions"):
             mu    = st.slider("Drift μ", -0.1, 0.3, 0.05, key="mu_vis")
             sigma = st.slider("Volatility σ", 0.01, 1.0, 0.36, key="sigma_vis")
 
@@ -684,7 +685,7 @@ def page_sde_visualiser():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader("📈 Simulated Price Paths (normalised to S₀)")
+        st.subheader("Simulated Price Paths (normalised to S₀)")
         logy = st.checkbox("Log y-scale", False)
         fig, ax = plt.subplots()
         show = min(12, M)
@@ -700,7 +701,7 @@ def page_sde_visualiser():
         st.pyplot(fig)
 
     with col2:
-        st.subheader("📊 Terminal Return Distribution")
+        st.subheader("Terminal Return Distribution")
         ret_gbm = np.log(np.maximum(gbm_paths[:, -1], _eps) / max(S0, _eps))
         ret_hes = np.log(np.maximum(heston_paths[:, -1], _eps) / max(S0, _eps))
         fig2, ax2 = plt.subplots()
