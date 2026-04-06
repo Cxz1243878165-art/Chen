@@ -744,7 +744,7 @@ def page_sde_visualiser():
 # ══════════════════════════════════════════════════════════════════════
 
 def page_performance():
-    st.title("⚡ Performance & Benchmark")
+    st.title("⏱️ Performance & Benchmark")
 
     left, right = st.columns([1.2, 0.8])
     with left:
@@ -790,7 +790,7 @@ def page_performance():
 # ══════════════════════════════════════════════════════════════════════
 
 def page_vol_smile():
-    st.title("📊 Volatility Smile Explorer — NVDA Options")
+    st.title("📉 Volatility Smile Explorer — NVDA Options")
 
     # --- Load data ---
     data_path = DEFAULT_DATA_DIR / DEFAULT_DATA_FILE
