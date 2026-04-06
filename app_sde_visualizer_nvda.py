@@ -94,70 +94,27 @@ def help_block(title, body_md, presets=None):
 def _inject_css():
     st.markdown("""
     <style>
-    .panel {
-        padding: 0.9rem 1.1rem;
-        margin: 0.8rem 0;
-        border-radius: 8px;
-        border: 1px solid #d9dee7;
-        background: #fafbfc;
+    .box { padding: 0.75rem 1rem; border-radius: 10px; margin: 0.75rem 0; }
+    .theorem  { background: #f7faff; border-left: 5px solid #3b82f6; }
+    .definition { background: #f6fff8; border-left: 5px solid #10b981; }
+    .remark   { background: #fffaf0; border-left: 5px solid #f59e0b; }
+    .hero {
+        background: linear-gradient(180deg,#f5f7fa, #ffffff);
+        padding: 2.5rem 1.25rem; border-radius: 18px; text-align: center;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.06); margin-bottom: 1.25rem;
     }
+    .hero h1 { margin: 0 0 .5rem 0; font-size: 2rem; }
+    .hero h3 { margin: 0; font-weight: 400; color:#555; }
+    .card {
+        border-radius: 16px; padding: 1rem 1.2rem;
+        border: 1px solid #eef0f3; background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04); height: 100%;
+    }
+    .card h4 { margin: .1rem 0 .4rem 0; }
+    .card p  { margin: 0 0 .6rem 0; color: #555; font-size: 0.95rem; }
+    </style>""", unsafe_allow_html=True)
 
-    .math-panel {
-        padding: 0.9rem 1.1rem;
-        margin: 0.8rem 0;
-        border-radius: 8px;
-        border-left: 4px solid #3b82f6;
-        background: #f4f8ff;
-    }
 
-    .warning-panel {
-        padding: 0.9rem 1.1rem;
-        margin: 0.8rem 0;
-        border-radius: 8px;
-        border-left: 4px solid #f59e0b;
-        background: #fff8eb;
-    }
-
-    .app-banner {
-        background: #eef3f8;
-        border: 1px solid #d6e0ea;
-        border-radius: 12px;
-        padding: 1.6rem 1.4rem;
-        text-align: center;
-        margin-bottom: 1.2rem;
-    }
-
-    .app-banner h1 {
-        margin: 0 0 0.35rem 0;
-        font-size: 2rem;
-    }
-
-    .app-banner p {
-        margin: 0;
-        color: #4b5563;
-        font-size: 1rem;
-    }
-
-    .feature-tile {
-        border: 1px solid #e1e6ee;
-        border-radius: 12px;
-        padding: 1rem 1.1rem;
-        background: white;
-        min-height: 100%;
-    }
-
-    .feature-tile h4 {
-        margin: 0 0 0.45rem 0;
-    }
-
-    .feature-tile p {
-        margin: 0;
-        color: #5b6470;
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
 
 # ══════════════════════════════════════════════════════════════════════
