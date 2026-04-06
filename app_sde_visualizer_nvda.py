@@ -356,7 +356,7 @@ THEORY_SECTIONS = [
     ("ou_demo",      "OU Explorer",                 "Interactive simulation of mean-reverting dynamics.",    "🧪"),
     ("heston_intro", "Heston Model",                "Two-factor dynamics, characteristic-function pricing, and market intuition.", "🌀"),
     ("heston_calib", "Heston Calibration",          "Parameter fitting, objective functions, and practical calibration issues.", "🔧"),
-    ("glossary",     "Glossary",                    "Summary definitions for notation and financial concepts used in the app."， "🔎"),
+    ("glossary", "Glossary", "Summary definitions for notation and financial concepts used in the app.", "🔎")
 ]
 
 
