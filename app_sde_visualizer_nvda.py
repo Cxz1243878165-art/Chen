@@ -27,9 +27,9 @@ DEFAULT_DATA_FILE = "nvda_options_jan2026.csv.gz"
 # ─── Navigation ───────────────────────────────────────────────────────
 NAV_LABELS = [
     "🏠 Home",
-    "📖 Theory and Notes",
+    "📖 Theory & Notes",
     "📈 SDE Visualiser",
-    "⏱️ Performance and Benchmark",
+    "⏱️ Performance & Benchmark",
     "📉 Vol Smile Explorer",
 ]
 
@@ -281,7 +281,7 @@ def page_home():
             "Go to Theory",
             key="go_theory",
             on_click=_navigate_to,
-            args=("📖 Theory and Notes",)
+            args=("📖 Theory & Notes",)
         )
 
     with col2:
@@ -317,7 +317,7 @@ def page_home():
             "Go to Benchmark",
             key="go_benchmark",
             on_click=_navigate_to,
-            args=("⏱️ Performance and Benchmark",)
+            args=("⏱️ Performance & Benchmark",)
         )
 
     with col4:
