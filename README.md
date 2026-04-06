@@ -1,7 +1,7 @@
 # 📈 NVDA Volatility & SDE Explorer — Black–Scholes vs Heston
 
-An interactive **Streamlit** application to explore stochastic differential equations (SDEs) in finance.  
-The tool demonstrates the **Black–Scholes (GBM)** and **Heston** models through simulations, performance benchmarks, and volatility smile analysis using NVIDIA (NVDA) option data from January 2026.
+An interactive Tool application to explore stochastic differential equations (SDEs) in finance.  
+The tool demonstrates the Black–Scholes (GBM) and Heston models through simulations, performance benchmarks, and volatility smile analysis using NVIDIA (NVDA) option data from January 2026.
 
 ---
 
