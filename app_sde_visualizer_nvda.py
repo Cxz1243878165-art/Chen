@@ -22,7 +22,7 @@ try:
 except NameError:
     BASE_DIR = Path.cwd()
 
-DEFAULT_DATA_DIR = BASE_DIR / "data"
+DEFAULT_DATA_DIR = BASE_DIR
 DEFAULT_DATA_FILE = "nvda_options_jan2026.csv.gz"
 
 # ─── Navigation ───────────────────────────────────────────────────────
