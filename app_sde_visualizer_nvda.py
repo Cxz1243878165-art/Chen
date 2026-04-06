@@ -208,7 +208,7 @@ def page_home():
         <h1>📈 NVDA Volatility & SDE Explorer</h1>
         <h3>Black–Scholes vs Heston — Interactive Analysis with NVIDIA Option Data</h3>
         <p style="color:#666; max-width:780px; margin: 0.75rem auto 0; font-size:1.05rem;">
-            This application accompanies the MSc thesis comparing the Black–Scholes and
+            This application accompanies the BSc thesis comparing the Black–Scholes and
             Heston stochastic volatility models using real NVDA option market data from January 2026.
             Explore the theory, simulate price paths, benchmark performance, and compare
             model-implied volatility smiles against market observations.
