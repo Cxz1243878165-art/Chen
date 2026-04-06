@@ -345,16 +345,16 @@ def page_home():
 # PAGE: THEORY & NOTES
 # ══════════════════════════════════════════════════════════════════════
 THEORY_SECTIONS = [
-    ("bm_intro",     "Standard Brownian Motion",    "Foundation of continuous-time randomness.",  "🌊"),
+    ("brownian",     "Standard Brownian Motion",    "Foundation of continuous-time randomness.",  "🌊"),
     ("ito",          "Itô's Lemma",                 "The stochastic chain rule and its role in model derivation.",       "🧮"),
     ("gbm_def",      "Geometric Brownian Motion",   "Definition, closed-form solution, and lognormal price dynamics.",      "📈"),
     ("gbm_var",      "GBM: Different Variances",    "Same noise, different σ to compare paths.",  "📊"),
     ("bs_theory",    "Black–Scholes (Theory)",      "Risk-neutral pricing, PDE intuition, and the European call formula.",        "📘"),
     ("bs_tools",     "BS Mini-Calculator",          "Quick prices for C/P with d₁, d₂.",        "🛠️"),
     ("limitations",  "Limitations & Smile",         "Why BS is too rigid; NVDA smile evidence.", "⚠️"),
-    ("mr_process",   "Mean-Reverting Process",      "OU intuition & link to Heston.",            "🔁"),
-    ("ou_demo",      "OU Explorer",                 "Interactive simulation of mean-reverting dynamics.",    "🧪"),
-    ("heston_intro", "Heston Model",                "Two-factor dynamics, characteristic-function pricing, and market intuition.", "🌀"),
+    ("meanrev",   "Mean-Reverting Process",      "OU intuition & link to Heston.",            "🔁"),
+    ("ou_explorer",      "OU Explorer",                 "Interactive simulation of mean-reverting dynamics.",    "🧪"),
+    ("heston", "Heston Model",                "Two-factor dynamics, characteristic-function pricing, and market intuition.", "🌀"),
     ("heston_calib", "Heston Calibration",          "Parameter fitting, objective functions, and practical calibration issues.", "🔧"),
     ("glossary", "Glossary", "Summary definitions for notation and financial concepts used in the app.", "🔎")
 ]
