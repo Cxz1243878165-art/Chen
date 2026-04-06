@@ -350,7 +350,7 @@ THEORY_SECTIONS = [
     ("gbm_def",      "Geometric Brownian Motion",   "Definition, closed-form solution, and lognormal price dynamics.",      "📈"),
     ("gbm_var",      "GBM: Different Variances",    "Same noise, different σ to compare paths.",  "📊"),
     ("bs_theory",    "Black–Scholes (Theory)",      "Risk-neutral pricing, PDE intuition, and the European call formula.",        "📘"),
-    ("bs_tools",     "BS Mini-Calculator",          "Quick prices for C/P with d₁, d₂.",        "🛠️"),
+    ("bs_calc",     "BS Mini-Calculator",          "Quick prices for C/P with d₁, d₂.",        "🛠️"),
     ("limitations",  "Limitations & Smile",         "Why BS is too rigid; NVDA smile evidence.", "⚠️"),
     ("meanrev",   "Mean-Reverting Process",      "OU intuition & link to Heston.",            "🔁"),
     ("ou_explorer",      "OU Explorer",                 "Interactive simulation of mean-reverting dynamics.",    "🧪"),
