@@ -293,7 +293,7 @@ def page_home():
         )
 
     st.markdown("---")
-    st.caption(BSc Thesis Companion Tool: NVDA options, stochastic differential equations, and volatility modelling)
+   st.caption("BSc Thesis Companion Tool: NVDA options, stochastic differential equations, and volatility modelling")
 
 
 # ══════════════════════════════════════════════════════════════════════
