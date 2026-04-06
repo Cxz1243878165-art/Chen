@@ -3,9 +3,6 @@
 An interactive **Streamlit** application to explore stochastic differential equations (SDEs) in finance.  
 The tool demonstrates the **Black–Scholes (GBM)** and **Heston** models through simulations, performance benchmarks, and volatility smile analysis using NVIDIA (NVDA) option data from January 2026.
 
-This project was developed as part of the BSc thesis:  
-*"Comparing Black–Scholes and Heston Option Pricing Models Using NVDA Market Data"*
-
 ---
 
 ## 🚀 Features
