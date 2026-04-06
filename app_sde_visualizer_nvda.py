@@ -1,6 +1,5 @@
 # ══════════════════════════════════════════════════════════════════════
 # NVDA Volatility & SDE Explorer
-# Interactive Streamlit application for MSc Thesis:
 # "Comparing Black–Scholes and Heston Models Using NVDA Option Data"
 # ══════════════════════════════════════════════════════════════════════
 
@@ -28,10 +27,10 @@ DEFAULT_DATA_FILE = "nvda_options_jan2026.csv.gz"
 # ─── Navigation ───────────────────────────────────────────────────────
 NAV_LABELS = [
     "🏠 Home",
-    "📚 Theory & Notes",
-    "🧪 SDE Visualiser",
-    "⚡ Performance & Benchmark",
-    "📊 Vol Smile Explorer",
+    "📖 Theory & Notes",
+    "📈 SDE Visualiser",
+    "⏱️ Performance & Benchmark",
+    "📉 Vol Smile Explorer",
 ]
 
 if "nav_page" not in st.session_state:
