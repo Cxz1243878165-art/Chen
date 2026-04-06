@@ -365,7 +365,7 @@ def _set_theory_view(sid):
 
 # ─── Individual theory sections ───────────────────────────────────────
 
-def _section_bm_intro():
+def _section_brownian():
     st.header("Standard Brownian Motion")
     st.markdown('<div class="box definition">Definition (Standard Brownian Motion).</div>', unsafe_allow_html=True)
     st.latex(r"W_0 = 0, \quad W_t - W_s \sim \mathcal{N}(0, t-s), \quad \text{independent increments, continuous paths}")
